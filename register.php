@@ -44,7 +44,7 @@
 
 
 	if($_SERVER['REQUEST_METHOD'] === 'POST') {
-			$data = $db -> query("INSERT INTO users VALUES (NULL, '$_POST[username]', '$_POST[password]', '$_POST[first]', '$_POST[last], '$_POST[email]')");
+			$data = $db -> query("INSERT INTO user (username, password, first_name, last_name, email) VALUES ('$_POST[username]', '$_POST[password]', '$_POST[first]', '$_POST[last]', '$_POST[email]')");
 	}
 ?>
 
