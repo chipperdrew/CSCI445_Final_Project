@@ -48,8 +48,6 @@
 
 
 	if($_SERVER['REQUEST_METHOD'] === 'POST') {
-		$users = $db -> query("SELECT ");
-
 		// Check password matching
 		if($_POST['password'] != $_POST['password2']) {
 			echo "<span style='color:red'>Your passwords didn't match!</span>";
