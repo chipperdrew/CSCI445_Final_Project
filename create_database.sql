@@ -58,7 +58,7 @@ CREATE TABLE request (
   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   owner_id INT NOT NULL,
   accepted_submission_id INT NULL,
-  title VARCHAR(1024) NOT NULL DEFAULT 'NULL',
+  title VARCHAR(1024) NOT NULL,
   description MEDIUMTEXT NULL,
   price_min DECIMAL NULL,
   price_max DECIMAL NULL,
