@@ -1,5 +1,8 @@
 USE team06;
 
+-- disable foreign keys to delete tables succesfully
+SET foreign_key_checks = 0;
+
 -- ---
 -- Table 'tag'
 -- tags are applied to a request to help search for it, allows for sorting as well
@@ -40,8 +43,8 @@ CREATE TABLE submission (
   request_id INT NOT NULL,
   user_id INT NOT NULL,
   submission_timestamp TIMESTAMP NULL,
-  content BLOB NULL,
-  filename MEDIUMTEXT NOT NULL DEFAULT 'NULL'
+  content BLOB,
+  filename MEDIUMTEXT NOT NULL
 );
 
 -- ---
@@ -78,13 +81,17 @@ CREATE TABLE request_tag (
   FOREIGN KEY(tag_id) REFERENCES tag(id)
 );
 
+-- enable foreign key checks
+SET foreign_key_checks = 1;
+
 -- ---
 -- Foreign Keys
 -- ---
 ALTER TABLE submission
-  ADD CONSTRAINT FOREIGN KEY request_id REFERENCES request id
+  ADD CONSTRAINT FOREIGN KEY(request_id) REFERENCES request(id)
   ON DELETE CASCADE;
 
 ALTER TABLE submission
- ADD CONSTRAINT FOREIGN KEY user_id REFERENCES user id
- ON DELETE CASCADE;
+  ADD CONSTRAINT FOREIGN KEY(user_id) REFERENCES `user`(id)
+  ON DELETE CASCADE;
+
