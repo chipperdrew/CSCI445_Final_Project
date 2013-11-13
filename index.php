@@ -5,7 +5,7 @@
 	Due Date: 12/03/13
 	TODO:
 		- Check the login validity
-		- Save requests posts to the DB
+		- Save request with correct user
 		- Add Disqus for commenting
 -->
 <?php include 'base.php' ?>
