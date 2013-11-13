@@ -45,9 +45,44 @@
 		$min_price = $_POST['min_price'];
 		$max_price = $_POST['max_price'];
 
-		// TODO Parse price
+		if (empty($title)) {
+			echo "You must enter a title for your request<br/>";
+		}
+
+		if (empty($desc)) {
+			echo "You must supply a description<br/>";
+		}
+
+		if (empty($title) || empty($desc)) {
+			exit;
+		}
+
+		$replace_needle = array('$', ',');
+		$price_pattern_msg = "Prices should be formatted like $1,000.00 or 1000.00<br/>";
+		if (!empty($min_price)) {
+			$min_price = (float) str_replace($replace_needle, '', $min_price);
+			if (empty($min_price) || $min_price < 0) {
+				echo "Unknown min price value: $_POST[min_price]<br/>";
+				echo $price_pattern_msg;
+				exit;
+			}
+		} else {
+			$min_price = 'NULL';
+		}
+
+		if (!empty($max_price)) {
+			$max_price = (float) str_replace($replace_needle, '', $max_price);
+			if (empty($max_price) || $max_price < 0) {
+				echo "Unknown max price value: $_POST[max_price]]<br/>";
+				echo $price_pattern_msg;
+				exit;
+			}
+		} else {
+			$max_price = 'NULL';
+		}
+
 		// TODO use current user, not default
-		$data = $db->query("INSERT INTO request (owner_id, title, description) VALUES (1, '$title', '$desc');");
+		$data = $db->query("INSERT INTO request (owner_id, title, description, price_min, price_max) VALUES (1, '$title', '$desc', $min_price, $max_price);");
 		// TODO display request details page
 		$request_id = $db->insert_id;
 		if ($data == true) {
