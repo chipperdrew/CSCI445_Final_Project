@@ -16,10 +16,14 @@
 
 
 <?php
-	// Get and display POST data, if available
+	$db = new mysqli('127.0.0.1', 'team06', 'blueberry', 'team06');
+	if(mysqli_connect_errno()) {
+		echo 'ERROR: Could not connect to the DB. Aborting...';
+		exit;
+	}
+
 	if($_SERVER['REQUEST_METHOD'] === 'POST') {
-		if($_POST['request']) {
-			// TODO: Store request in a DB
+			// TODO: Store in DB
 			$req = $_POST['request'];
 			echo $req;
 		}

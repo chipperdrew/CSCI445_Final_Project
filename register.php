@@ -19,10 +19,32 @@
 				<td><input type="password" name="password" /></td>
 			</tr>
 			<tr>
-				<td>Verify password:</td>
-				<td><input type="password" name="password2" /></td>
+				<td>Enter your first name:</td>
+				<td><input type="text" name="first" /></td>
+			</tr>
+			<tr>
+				<td>Enter your last name:</td>
+				<td><input type="text" name="last" /></td>
 			</tr>	
+			<tr>
+				<td>Email:</td>
+				<td><input type="email" name="email" /></td>
+			</tr>		
 		</table>
 		<button action="submit">Register</button>
 	</form>
 <?php endblock() ?>
+
+<?php
+	$db = new mysqli('127.0.0.1', 'team06', 'blueberry', 'team06');
+	if(mysqli_connect_errno()) {
+		echo 'ERROR: Could not connect to the DB. Aborting...';
+		exit;
+	}
+
+
+	if($_SERVER['REQUEST_METHOD'] === 'POST') {
+			$data = $db -> query("INSERT INTO users VALUES (NULL, '$_POST[username]', '$_POST[password]', '$_POST[first]', '$_POST[last], '$_POST[email]')");
+	}
+?>
+
