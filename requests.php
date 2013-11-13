@@ -26,6 +26,5 @@
 			// TODO: Store in DB
 			$req = $_POST['request'];
 			echo $req;
-		}
 	}
 ?>
