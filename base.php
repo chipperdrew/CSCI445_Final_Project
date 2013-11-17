@@ -27,10 +27,11 @@
 				<ul class="nav nav-tabs">
 					<li><a href="index.php">Home</a></li>
 					<li><a href="requests.php">Code Requests</a></li>
-					<li><a href="register.php">Register</a></li>
 					<?php
 						if (isset($_SESSION[$USER_ID])) {
 							echo '<li><a href="logout.php">Logout</a></li>';
+						} else {
+							echo '<li><a href="register.php">Register</a></li>';
 						}
 					?>
 				<ul>
