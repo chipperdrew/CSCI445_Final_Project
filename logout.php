@@ -6,7 +6,7 @@
 <?php endblock() ?>
 
 <?php startblock('content') ?>
-	You've successfully logged out, <?php $_SESSION[$USERNAME] ?>. Come back soon so you can <strong>get money $ get paid $</strong>.
+	You've successfully logged out, <?php echo $_SESSION[$USERNAME]; ?>. Come back soon so you can <strong>get money $ get paid $</strong>.
 <?php endblock() ?>
 
 <?php

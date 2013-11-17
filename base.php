@@ -12,30 +12,36 @@
 		<?php emptyblock('title') ?> 
 	</title>
  
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="our.css" rel="stylesheet">
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 
 
 	
 <body>
-	<div id='navBar'>
-		<?php startblock('navBar') ?>
-			<a href="index.php">Home</a>
-			<a href="requests.php">Code Requests</a>
-			<a href="register.php">Register</a>
-			<?php
-				if (isset($_SESSION[$USER_ID])) {
-					echo '<a href="logout.php">Logout</a>';
-				}
-			?>
-			<br/>
-		<?php endblock() ?>
-	</div>
+	<div id="jankdiv">
+		<div id='navBar'>
+			<?php startblock('navBar') ?>
+			
+				<ul class="nav nav-tabs">
+					<li><a href="index.php">Home</a></li>
+					<li><a href="requests.php">Code Requests</a></li>
+					<li><a href="register.php">Register</a></li>
+					<?php
+						if (isset($_SESSION[$USER_ID])) {
+							echo '<li><a href="logout.php">Logout</a></li>';
+						}
+					?>
+				<ul>
+				<br/>
+			<?php endblock() ?>
+		</div>
 
-	<div id='content'> 
-		<?php startblock('content') ?> 
-		<?php endblock() ?> 
-	</div> 
+		<div id='content'> 
+			<?php startblock('content') ?> 
+			<?php endblock() ?> 
+		</div>
+	<div>	
 </body> 
 </html>
