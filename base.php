@@ -1,4 +1,9 @@
-<?php require_once 'ti.php' ?> 
+<?php require_once 'ti.php'
+	$USER_ID = 'user_id';
+	$USERNAME = 'username';
+	$USER_FIRST_NAME = 'user_first_name';
+	$USER_LAST_NAME = 'user_last_name';
+?> 
 <html> 
 <head> 
 	<title> 
