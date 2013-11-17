@@ -20,44 +20,25 @@
 <!-- Content block -->
 <?php startblock('content') ?>
 	<h2>Welcome to PaidSource!</h2>
-
-	<p>Login below:</p>
-	<form action="" method="POST">
-		<table>
-			<tr>
-				<td>Username:</td>
-				<td><input type="text" name="username" /></td>
-			</tr>
-			<tr>
-				<td>Password:</td>
-				<td><input type="password" name="password" /></td>
-			</tr>
-		</table>
-		<button action="submit">Login</button>
-	</form>
-<?php endblock() ?>
-
 <?php
-	$db = new mysqli('127.0.0.1', 'team06', 'blueberry', 'team06');
-	if(mysqli_connect_errno()) {
-		echo 'ERROR: Could not connect to the DB. Aborting...';
-		exit;
-	}
-
-
-	if($_SERVER['REQUEST_METHOD'] === 'POST') {
-		// Check if user and pass combo exist
-		$users = $db -> query("SELECT * FROM user WHERE username = '" . $_POST['username'] . "' AND password = '" . $_POST['password'] . "'");
-		if($users->fetch_row()) {
-			echo "Login successful!";
-			//session_register($_POST['username']);
-			//session_register($_POST['password']);
-			//session_start();
-		} else {
-			echo "<span style='color:red'>Either the username does not exist, or the password is incorrect. Please try again.</span>";
-		}
+	if (isset($_SESSION[$USER_ID])) {
+		echo "TODO, request listings";
+	} else {
+		echo '
+		<p>Login below:</p>
+		<form action="login.php" method="POST">
+			<table>
+				<tr>
+					<td>Username:</td>
+					<td><input type="text" name="username" /></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" name="password" /></td>
+				</tr>
+			</table>
+			<button action="submit">Login</button>
+		</form>';
 	}
 ?>
-
-
-
+<?php endblock() ?>

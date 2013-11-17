@@ -35,7 +35,7 @@
 				<td><input type="email" name="email" /></td>
 			</tr>		
 		</table>
-		<button action="submit">Register</button>
+		<button action="submit" class="btn btn-success">Register</button>
 	</form>
 <?php endblock() ?>
 
