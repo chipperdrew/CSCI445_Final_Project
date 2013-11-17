@@ -1,4 +1,7 @@
-<?php require_once 'ti.php' ?> 
+<?php require_once 'ti.php'; 
+  session_start(); // every page maintains a session, login verification needs to be made on a per page basis
+  // create and store session vars in $_SESSION['blah']
+?> 
 <html> 
 <head> 
 	<title> 

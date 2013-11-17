@@ -7,6 +7,8 @@
 		- Check the login validity
 		- Save request with correct user
 		- Add Disqus for commenting
+		- Styling
+		- Maintain user session
 -->
 <?php include 'base.php' ?>
 
