@@ -20,23 +20,25 @@
 
 	
 <body>
-	<div id='navBar'>
-		<?php startblock('navBar') ?>
+	<div id="jankdiv">
+		<div id='navBar'>
+			<?php startblock('navBar') ?>
+			
+				<ul class="nav nav-tabs">
+					<li><a href="index.php">Home</a></li>
+					<li><a href="requests.php">Code Requests</a></li>
+					<li><a href="register.php">Register</a></li>
+				<ul>
+				<br/>
 		
-			<ul class="nav nav-tabs">
-				<li><a href="index.php">Home</a></li>
-				<li><a href="requests.php">Code Requests</a></li>
-				<li><a href="register.php">Register</a></li>
-			<ul>
-			<br/>
-	
 
-		<?php endblock() ?>
-	</div>
+			<?php endblock() ?>
+		</div>
 
-	<div id='content'> 
-		<?php startblock('content') ?> 
-		<?php endblock() ?> 
-	</div> 
+		<div id='content'> 
+			<?php startblock('content') ?> 
+			<?php endblock() ?> 
+		</div>
+	<div>	
 </body> 
 </html>
