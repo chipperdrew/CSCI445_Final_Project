@@ -98,13 +98,13 @@
 		} else {
 			$max_price = 'NULL';
 		}
-
-		// TODO use current user, not default
-		$data = $db->query("INSERT INTO request (owner_id, title, description, price_min, price_max) VALUES (1, '$title', '$desc', $min_price, $max_price);");
+		// Get user id and add to DB
+		$user_id = $_SESSION['user_id'];
+		$data = $db->query("INSERT INTO request (owner_id, title, description, price_min, price_max) VALUES ('$user_id', '$title', '$desc', $min_price, $max_price);");
 		// TODO display request details page
 		$request_id = $db->insert_id;
 		if ($data == true) {
-			echo "<br/>The request was successfully entered with id $request_id under user with id 1";
+			echo "<br/>The request was successfully entered!";
 		} else {
 			echo "<br/>Something went wrong with persisting to db.";
 		}
