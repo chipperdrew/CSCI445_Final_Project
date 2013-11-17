@@ -24,6 +24,11 @@
 			<a href="index.php">Home</a>
 			<a href="requests.php">Code Requests</a>
 			<a href="register.php">Register</a>
+			<?php
+				if (isset($_SESSION[$USER_ID])) {
+					echo '<a href="logout.php">Logout</a>';
+				}
+			?>
 			<br/>
 		<?php endblock() ?>
 	</div>
