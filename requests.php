@@ -44,6 +44,7 @@
 
 	// Display all requests
 	$requests = $db -> query("SELECT * FROM request");
+	echo "<div id='jankdiv'>";
 	while($row = $requests->fetch_row()) {
 		echo "<a href='post_base.php?id=$row[0]'>" // Link based on request id
 			. "<h3>$row[3]</h3></a>"	   // Request Title
@@ -109,4 +110,5 @@
 			echo "<br/>Something went wrong with persisting to db.";
 		}
 	}
+	echo "</div>";
 ?>

@@ -42,6 +42,6 @@
 			<?php startblock('content') ?> 
 			<?php endblock() ?> 
 		</div>
-	<div>	
+	</div>	
 </body> 
 </html>
