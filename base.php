@@ -2,12 +2,11 @@
 <html> 
 <head> 
 	<title> 
-		<link href="css/bootstrap.css" rel="stylesheet">
-		<script type="text/javasript" src="js/bootstrap.js">
-		
-		
 		<?php emptyblock('title') ?> 
-	</title> 
+	</title>
+ 
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<script type="text/javascript" src="js/bootstrap.js"></script>
 </head>
 
 
