@@ -12,8 +12,9 @@
 		<?php emptyblock('title') ?> 
 	</title>
  
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="our.css" rel="stylesheet">
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 
 
@@ -21,10 +22,15 @@
 <body>
 	<div id='navBar'>
 		<?php startblock('navBar') ?>
-			<a href="index.php">Home</a>
-			<a href="requests.php">Code Requests</a>
-			<a href="register.php">Register</a>
+		
+			<ul class="nav nav-tabs">
+				<li><a href="index.php">Home</a></li>
+				<li><a href="requests.php">Code Requests</a></li>
+				<li><a href="register.php">Register</a></li>
+			<ul>
 			<br/>
+	
+
 		<?php endblock() ?>
 	</div>
 
