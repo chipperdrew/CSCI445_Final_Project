@@ -18,7 +18,7 @@
 		$request = $db -> query("SELECT * FROM request WHERE id= " . $_GET['id']);
 		if($post_data = $request->fetch_row()) {
 			echo "<h2>$post_data[3]</h2>"	 	// Title
-			. "<h3>$post_data[4]</h3>"		// Description
+			. "<h4>$post_data[4]</h4>"		// Description
 			. "<p>Username: ";
 			// Get the username based on user id
 			$user = $db -> query("SELECT username FROM user where id=$post_data[1]");

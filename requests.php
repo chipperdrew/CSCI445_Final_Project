@@ -7,7 +7,7 @@
 
 <!-- Content block -->
 <?php startblock('content') ?>
-	<p>Enter your request:</p>
+	<h3>Enter your request:</h3>
 	<form action="" method="POST">
 		<table>
 			<tr>
@@ -27,7 +27,7 @@
 				<td><textarea rows="1" cols="10" name="max_price"></textarea></td>
 			<tr/>
 		</table>
-		<button type="submit">Request</button>
+		<button type="submit" class="btn btn-success">Request</button>
 	</form>
 
 	<h2>Current Requests Shown Below:</h2>
