@@ -6,22 +6,39 @@
 <?php endblock() ?>
 
 <?php startblock('content') ?>
-	
-	<!-- Here be the title of the post -->
-	<h3 id ='title-request'> </h3>
-
-	<!-- Here be the language of the post -->
-	<div id='language-request'><p> </p></div>
-	
-	
-	<!-- Here be the description of the post -->
-	<div id = 'description-request'> <p> </p></div>
-	
-	
-	<!-- Here be the list of replies -->
+	<!-- Get the content of the post, if it exists -->
+	<?php
+		// Connect to db
+		$db = new mysqli('127.0.0.1', 'team06', 'blueberry', 'team06');
+		if(mysqli_connect_errno()) {
+			echo 'ERROR: Could not connect to the DB. Aborting...';
+			exit;
+		}
+		// Get request
+		$request = $db -> query("SELECT * FROM request WHERE id= " . $_GET['id']);
+		if($post_data = $request->fetch_row()) {
+			echo "<h2>$post_data[3]</h2>"	 	// Title
+			. "<h3>$post_data[4]</h3>"		// Description
+			. "<p>Username: ";
+			// Get the username based on user id
+			$user = $db -> query("SELECT username FROM user where id=$post_data[1]");
+			if($username = $user->fetch_row()) {
+				echo "$username[0]<br/>";
+			}	
+			echo "Minimum payout: $$post_data[5]</br>"	// Min price
+			. "Maximum payout: $$post_data[6]<br/>";	// Max price
+			// Check if an answer has been selected
+			if($post_data[2]) {
+				echo "The post is <span style='color:red; font-weight:bold'>CLOSED</span>
+			 		for submissions";
+			} else {
+				echo "The post is <span style='color:green; font-weight:bold'>OPEN</span> 
+					for submissions";
+			}	
+		}
+	?>
 
 	<!-- Intense Debate comments -->
-
 <script>
 var idcomments_acct = '649f0b4f2fdb55816123cade693b12fb';
 var idcomments_post_id;
