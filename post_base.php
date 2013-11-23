@@ -14,6 +14,7 @@
 			echo 'ERROR: Could not connect to the DB. Aborting...';
 			exit;
 		}
+		$request_open = false;
 		// Get request
 		$request = $db -> query("SELECT * FROM request WHERE id= " . $_GET['id']);
 		if($post_data = $request->fetch_row()) {
@@ -34,7 +35,23 @@
 			} else {
 				echo "The post is <span style='color:green; font-weight:bold'>OPEN</span> 
 					for submissions";
-			}	
+				$request_open = true;
+			}
+		}
+		if ($request_open) {
+			$id = $_GET['id'];
+			echo "
+			<div class=\"panel panel-info fifty\">
+				<!-- File Upload -->
+				<div class=\"panel-heading\"><h3 class=\"panel-title\">Submit Code</h3></div>
+				<div class=\"panel-body\">
+					<form action=\"submission_upload.php?id=$id\" method=\"post\" enctype=\"multipart/form-data\">
+						<label for=\"file\">Filename:</label>
+						<input type=\"file\" name=\"file\" id=\"file\"><br>
+						<input onclick=\"return verifyFile();\" type=\"submit\" name=\"submit\" value=\"Submit\">
+					</form>
+				</div>
+			</div>";
 		}
 	?>
 
@@ -46,6 +63,15 @@ var idcomments_post_url;
 </script>
 <span id="IDCommentsPostTitle" style="display:none"></span>
 <script type='text/javascript' src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+<script>
+	function verifyFile() {
+		var f = document.getElementById("file");
+		if (!(f && f.value)) {
+			alert("You must select a file for upload");
+			return false;
+		}
+		return true;
+	}
+</script>
+<?php endblock() ?>
 
-
-<?php endblock() ?>	

@@ -21,7 +21,7 @@
 <?php startblock('content') ?>
 	<h2>Welcome to PaidSource!</h2>
 <?php
-	if (isset($_SESSION[$USER_ID])) {
+	if (is_logged_in()) {
 		echo "TODO, request listings";
 	} else {
 		echo '
