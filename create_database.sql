@@ -43,8 +43,10 @@ CREATE TABLE submission (
   request_id INT NOT NULL,
   user_id INT NOT NULL,
   submission_timestamp TIMESTAMP NULL,
-  content BLOB,
-  filename MEDIUMTEXT NOT NULL
+  file_name TEXT NOT NULL,
+  file_type TEXT NOT NULL,
+  file_size INT NOT NULL,
+  file_content BLOB NOT NULL
 );
 
 -- ---
