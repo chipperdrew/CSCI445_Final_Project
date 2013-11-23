@@ -1,10 +1,16 @@
 <?php require_once 'ti.php'; 
 	session_start(); // every page maintains a session, login verification needs to be made on a per page basis
 	// create and store session vars in $_SESSION['blah']
-	$USER_ID = 'user_id';
-	$USERNAME = 'username';
-	$USER_FIRST_NAME = 'user_first_name';
-	$USER_LAST_NAME = 'user_last_name';
+	define('USER_ID', 'user_id');
+	define('USERNAME', 'username');
+	define('USER_FIRST_NAME', 'user_first_name');
+	define('USER_LAST_NAME', 'user_last_name');
+	function is_logged_in() {
+		if (isset($_SESSION[USER_ID])) {
+			return true;
+		}
+		return false;
+	}
 ?> 
 <html> 
 <head> 
@@ -28,7 +34,7 @@
 					<li><a href="index.php">Home</a></li>
 					<li><a href="requests.php">Code Requests</a></li>
 					<?php
-						if (isset($_SESSION[$USER_ID])) {
+						if (is_logged_in()) {
 							echo '<li><a href="logout.php">Logout</a></li>';
 						} else {
 							echo '<li><a href="register.php">Register</a></li>';
