@@ -35,9 +35,10 @@
 					<li><a href="requests.php">Code Requests</a></li>
 					<?php
 						if (is_logged_in()) {
-							echo '<li><a href="logout.php">Logout</a></li>';
+							echo "<li><a href='user_page.php'>My Page</a></li>";
+							echo "<li><a href='logout.php'>Logout</a></li>";
 						} else {
-							echo '<li><a href="register.php">Register</a></li>';
+							echo "<li><a href='register.php'>Register</a></li>";
 						}
 					?>
 				<ul>

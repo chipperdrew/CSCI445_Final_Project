@@ -4,12 +4,13 @@
 	Team 6
 	Due Date: 12/03/13
 	TODO:
-		- User pages
-			- My Requests
-				- View Submissions
-				- Select Submission and/or Close Request
-			- My Submissions
+		- If user who posted request, have option to close request
+
 		- Styling
+
+		- Show requests on home page
+
+		- Option to sort requests?
 -->
 <?php include 'base.php' ?>
 

@@ -63,7 +63,7 @@
       echo '</div>';
     }
   } else {
-    echo '<strong>Something went wrong with the file upload, try again.';
+    echo '<strong>Something went wrong with the file upload, try again.</strong>';
     $valid = false;
   }
 ?>
