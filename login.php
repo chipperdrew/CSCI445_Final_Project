@@ -9,7 +9,7 @@
 <?php
 	$db = new mysqli('127.0.0.1', 'team06', 'blueberry', 'team06');
 	if(mysqli_connect_errno()) {
-		echo 'ERROR: Could not connect to the DB. Aborting...';
+		echo "<span class='red_text'>ERROR: Could not connect to the DB. Aborting...</span>";
 		exit;
 	}
 
@@ -24,7 +24,7 @@
 			$_SESSION[USERNAME] = $row[3];
 			echo "<span style='color:green'>You've successfully logged in.</span><br/><strong>get money $ get paid $</strong>";
 		} else {
-			echo "<span style='color:red'>Either the username does not exist, or the password is incorrect. Please try again.</span>";
+			echo "<span class='red_text'>Either the username does not exist, or the password is incorrect. Please try again.</span>";
 		}
 	}
 ?>

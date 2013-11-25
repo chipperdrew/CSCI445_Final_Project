@@ -38,7 +38,7 @@
 					<td><input type="password" name="password" /></td>
 				</tr>
 			</table>
-			<button action="submit">Login</button>
+			<button class="btn btn-success" action="submit">Login</button>
 		</form>';
 	}
 ?>

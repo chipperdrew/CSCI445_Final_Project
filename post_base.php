@@ -11,7 +11,7 @@
 		// Connect to db
 		$db = new mysqli('127.0.0.1', 'team06', 'blueberry', 'team06');
 		if(mysqli_connect_errno()) {
-			echo 'ERROR: Could not connect to the DB. Aborting...';
+			echo '<span class='red_text'>ERROR: Could not connect to the DB. Aborting...</span>';
 			exit;
 		}
 		$request_open = false;

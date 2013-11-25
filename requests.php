@@ -29,10 +29,8 @@
 		</table>
 		<button type="submit" class="btn btn-success">Request</button>
 	</form>
-
-	<h2>Current Requests Shown Below:</h2>
+	
 <?php endblock() ?>
-
 
 <?php
 	// Connect to the DB
@@ -42,37 +40,26 @@
 		exit;
 	}
 
-	// Display all requests
-	$requests = $db -> query("SELECT * FROM request");
-	echo "<div id='jankdiv'>";
-	while($row = $requests->fetch_row()) {
-		echo "<a href='post_base.php?id=$row[0]'>" // Link based on request id
-			. "<h3>$row[3]</h3></a>"	   // Request Title
-			. "Posted by user: ";		   // User_id
-		// Get username based off of id
-		$user = $db -> query("SELECT username FROM user where id=$row[1]");
-		if($username = $user->fetch_row()) {
-			echo $username[0];
-		}
-	}
-	echo "<br/>";
-
 	// Check if user is posting a request
 	if($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$title = $_POST['title'];
 		$desc = $_POST['desc'];
 		$min_price = $_POST['min_price'];
 		$max_price = $_POST['max_price'];
+	
+		// If user is not logged in, exit
+		if(!is_logged_in()) {
+			echo "<span class='red_text'>You must be logged in to post a request.</span><br/>";
+		}
 
+		// Check if the title or description are empty. If so, exit
 		if (empty($title)) {
-			echo "You must enter a title for your request<br/>";
+			echo "<span class='red_text'>You must enter a title for your request</span><br/>";
 		}
-
 		if (empty($desc)) {
-			echo "You must supply a description<br/>";
+			echo "<span class='red_text'>You must supply a description</span><br/>";
 		}
-
-		if (empty($title) || empty($desc)) {
+		if (empty($title) || empty($desc) || !is_logged_in()) {
 			exit;
 		}
 
@@ -102,12 +89,26 @@
 		// Get user id and add to DB
 		$user_id = $_SESSION['user_id'];
 		$data = $db->query("INSERT INTO request (owner_id, title, description, price_min, price_max) VALUES ('$user_id', '$title', '$desc', $min_price, $max_price);");
-		// TODO display request details page
 		$request_id = $db->insert_id;
 		if ($data == true) {
 			echo "<br/>The request was successfully entered!";
 		} else {
-			echo "<br/>Something went wrong with persisting to db.";
+			echo "<br/><span class='red_text'>Something went wrong with the DB. Please try again.</span>";
+		}
+	}
+
+	// Display all requests
+	$requests = $db -> query("SELECT * FROM request");
+	echo "<div id='jankdiv'>";
+	echo "<h2>Current Requests Shown Below:</h2>";
+	while($row = $requests->fetch_row()) {
+		echo "<a href='post_base.php?id=$row[0]'>" // Link based on request id
+			. "<h3>$row[3]</h3></a>"	   // Request Title
+			. "Posted by user: ";		   // User_id
+		// Get username based off of id
+		$user = $db -> query("SELECT username FROM user where id=$row[1]");
+		if($username = $user->fetch_row()) {
+			echo $username[0];
 		}
 	}
 	echo "</div>";
