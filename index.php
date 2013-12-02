@@ -24,7 +24,6 @@
 	<h2>Welcome to PaidSource!</h2>
 <?php
 	if (is_logged_in()) {
-		echo '<h4>My Requests</h4>';
 		include 'user_page.php'
 	} else {
 		echo '
