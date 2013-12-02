@@ -8,7 +8,7 @@
 
 		- Styling
 
-		- Show requests on home page
+		- Show requests on home page??? (Same or different from requests page?)
 
 		- Option to sort requests?
 -->
@@ -24,7 +24,7 @@
 	<h2>Welcome to PaidSource!</h2>
 <?php
 	if (is_logged_in()) {
-		echo '<h4>My Requests</h4>';
+		echo "TODO: show requests";
 	} else {
 		echo '
 		<p>Login below:</p>
