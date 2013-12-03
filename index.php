@@ -50,7 +50,7 @@
 			</table>
 			<button class="btn btn-success" action="submit">Login</button>
 		</form>';
-		echo "</div>":
+		echo "</div>";
 	}
 ?>
 <?php endblock() ?>
