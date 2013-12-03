@@ -101,15 +101,21 @@
 	$requests = $db -> query("SELECT * FROM request");
 	echo "<div id='jankdiv'>";
 	echo "<h2>Current Requests Shown Below:</h2>";
+	echo "<table class="table-striped">";
 	while($row = $requests->fetch_row()) {
+		echo "<tr>";
+		echo "<td>";
 		echo "<a href='post_base.php?id=$row[0]'>" // Link based on request id
 			. "<h3>$row[3]</h3></a>"	   // Request Title
 			. "Posted by user: ";		   // User_id
+		echo "</td>";
 		// Get username based off of id
 		$user = $db -> query("SELECT username FROM user where id=$row[1]");
 		if($username = $user->fetch_row()) {
 			echo $username[0];
 		}
+		echo "</tr>"
 	}
+	echo "</table>";
 	echo "</div>";
 ?>
