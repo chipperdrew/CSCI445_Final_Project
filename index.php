@@ -19,6 +19,7 @@
 	Welcome to PaidSource
 <?php endblock() ?>
 
+<div class="well">
 <!-- Content block -->
 <?php startblock('content') ?>
 	<h2>Welcome to PaidSource!</h2>
@@ -44,3 +45,4 @@
 	}
 ?>
 <?php endblock() ?>
+</div>
