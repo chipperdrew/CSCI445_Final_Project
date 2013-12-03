@@ -24,13 +24,14 @@
 	while($row = $open_reqs->fetch_row()) {
 		echo "<li><a href='post_base.php?id=$row[0]'>$row[1]</a></li>";
 		// Check for submissions on requests
-		$submissions = $db->query("SELECT user.username, submission.file_name FROM request
+		$submissions = $db->query("SELECT user.username, submission.file_name, submission.id FROM request
 			INNER JOIN submission ON submission.request_id = request.id
 			INNER JOIN user ON user.id = submission.user_id
 			WHERE request.id = " . $row[0]);
 		echo "<ul>";
 		while($sub = $submissions->fetch_row()) {
-			echo "<li>$sub[0]'s submission: $sub[1]</li>";
+			$id = $sub[2];
+			echo "<li>$sub[0]'s submission: <a class=\"btn btn-primary btn-xs\" href=\"download_file.php?id=$id\">$sub[1] <span class=\"left-pad glyphicon glyphicon-floppy-save\"></span></a></li>";
 		}
 		echo "</ul>";
 	}
