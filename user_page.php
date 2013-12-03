@@ -43,5 +43,8 @@
 	}
 
 	echo "</div>";
+
+	echo "This is a test download link: <br>";
+	echo '<a href="download_file.php?id=321">Download Me</a>';
 ?>
 
