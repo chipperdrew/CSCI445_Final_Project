@@ -98,10 +98,10 @@
 	}
 
 	// Display all requests
-	$requests = $db -> query("SELECT * FROM request");
+	$requests = $db -> query("SELECT * FROM request WHERE accepted_submission_id is NULL");
 	echo "<div id='jankdiv'>";
-	echo "<h2>Current Requests Shown Below:</h2>";
 	echo '<table class="table-striped">';
+	echo "<caption>Current Requests</caption>";
 	echo "<tr>";
 	echo "<th>Title of Request</th>";
 	echo "<th>Posted By:</th>";
