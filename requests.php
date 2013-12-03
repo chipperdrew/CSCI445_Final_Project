@@ -101,7 +101,6 @@
 	$requests = $db -> query("SELECT * FROM request");
 	echo "<div id='jankdiv'>";
 	echo "<h2>Current Requests Shown Below:</h2>";
-	echo "<table class="table-striped>";
 	while($row = $requests->fetch_row()) {
 		echo "<tr>";
 		echo "<td>";
@@ -114,7 +113,7 @@
 		if($username = $user->fetch_row()) {
 			echo $username[0];
 		}
-		echo "</tr>"
+		echo "</tr>";
 	}
 	echo "</table>";
 	echo "</div>";
