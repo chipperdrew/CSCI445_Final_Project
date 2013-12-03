@@ -18,6 +18,7 @@
 	}
 
 	// Show all open requests by user
+	<div class="well">
 	echo "<h3>All open requests by $_SESSION[username]:</h3>";
 	$open_reqs = $db->query("SELECT id, title FROM request WHERE accepted_submission_id IS NULL AND owner_id=$_SESSION[user_id]");
 	echo "<ul>";
@@ -40,7 +41,8 @@
 		echo "</ul>";
 	}
 	echo "</ul><br/>";
-
+	echo '</div>';
+	echo '<div class="well">';
 	// Show all closed requests by user
 	echo "<h3>All closed requests by $_SESSION[username]:</h3>";
 	$open_reqs = $db->query("SELECT id, title FROM request WHERE accepted_submission_id IS NOT NULL AND owner_id=$_SESSION[user_id]");

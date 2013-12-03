@@ -61,7 +61,7 @@
 		<!-- //Brief Overview -->
 		<div class="well">
 			<h2>Brief Introduction</h2>
-			<p>Hello and welcome to <strong>PaidSource. Here you can take advantage of the advanced communication systems
+			<p>Hello and welcome to <strong>PaidSource</strong>. Here you can take advantage of the advanced communication systems
 			our time(the internet) to get help with your personal coding projects</p>
 			<p>How is this possible? Its quite simple actually. Here at <strong>PaidSource</strong> you can request code packets from other users
 			will help you to complete your projects(at a price). Likewise you can complete coding requests made by other users and get paid in the process!</p>
@@ -84,14 +84,23 @@
 
 		
 		<!-- //How to add a request -->
-
+		<div class="well">
+			<h2>Adding a Request</h2>
+			<p>In order to add a request of your own, click the <strong>Code requests</strong> tab at the top of this page.</p>
+			<p>Form here you can fill out the top form with the title, description, minimum payout, and maximum payout of your request. Then click the request button and you are done!</p>
+			<p><strong>YES IT'S THAT SIMPLE!!</strong></p>
+		</div>
 
 
 		<!-- How to look at your own requests -->
-		
+		<div class="well">
+			<p>Once you are logged in you are able to view your own open and closed(completed) requests <strong>at any time</strong> by
+			selecting the <strong>My Page</strong> tab at the top of this page.</p>
+		</div>
 		
 		
 		<!-- When you are finished click the logout button and get money get paid -->
-
-
+		<div class="well">
+			<p>When you are ready to say goodbye to us at <strong>PaidSource</strong> for the time being, simply click the logout button or redirect your browser to another page</p>
+		</div>
 <?php endblock() ?>
