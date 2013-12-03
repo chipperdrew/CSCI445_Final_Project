@@ -105,7 +105,7 @@
 	echo "<th>";
 	echo "<td>Title</td>";
 	echo "<td>Posted By:</td>";
-	echo "</th>"
+	echo "</th>";
 	
 	while($row = $requests->fetch_row()) {
 		echo "<tr>";
