@@ -39,7 +39,8 @@
 			}
 		
 			// Check if the user owns the post
-			if($post_data[1]==$_SESSION['user_id']) {
+			
+			if(is_logged_in() && $post_data[1]==$_SESSION[USER_ID]) {
 				echo "<br/><a href='request_edit.php?id=$_GET[id]'>Edit your post</a>";
 			}
 		}
