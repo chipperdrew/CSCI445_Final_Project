@@ -99,11 +99,11 @@
 
 	// Display all requests
 	$requests = $db -> query("SELECT * FROM request WHERE accepted_submission_id is NULL");
-	echo "<div id='jankdiv'>";
+	echo "<div class='well' id='jankdiv'>";
 	echo '<table class="table-striped">';
 	echo "<caption><h4>Current Requests</h4></caption>";
 	echo "<tr>";
-	echo "<th>Title of Request</th><th>     </th>";
+	echo "<th>Title of Request</th>";
 	echo "<th>Posted By:</th>";
 	echo "</tr>";
 	while($row = $requests->fetch_row()) {
@@ -112,7 +112,6 @@
 		echo "<a href='post_base.php?id=$row[0]'>" // Link based on request id
 			. "<h3>$row[3]</h3></a>";
 		echo "</td>";
-		echo "<td>	<td>";
 		// Get username based off of id
 		$user = $db -> query("SELECT username FROM user where id=$row[1]");
 		if($username = $user->fetch_row()) {
