@@ -7,7 +7,7 @@
 
 <!-- Content block -->
 <?php startblock('content') ?>
-	<div class="well">
+	<div class="well well-sm">
 		<h3>Enter your request:</h3>
 		<form action="" method="POST" role="form">
 				<table>
@@ -108,7 +108,7 @@
 
 	// Display all requests
 	$requests = $db -> query("SELECT * FROM request WHERE accepted_submission_id is NULL");
-	echo "<div class='well' id='jankdiv'>";
+	echo "<div class='well well-sm' id='jankdiv'>";
 	echo '<table class="table-striped">';
 	echo "<caption><h4>Current Requests</h4></caption>";
 	echo "<tr>";
