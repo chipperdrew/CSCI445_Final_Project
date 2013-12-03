@@ -101,7 +101,7 @@
 	$requests = $db -> query("SELECT * FROM request");
 	echo "<div id='jankdiv'>";
 	echo "<h2>Current Requests Shown Below:</h2>";
-	echo "<table class="table-striped">";
+	echo "<table class="table-striped>";
 	while($row = $requests->fetch_row()) {
 		echo "<tr>";
 		echo "<td>";
