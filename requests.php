@@ -114,7 +114,7 @@
 		if($username = $user->fetch_row()) {
 			echo $username[0];
 		}
-		echo "</tr>"
+		echo "</tr>";
 	}
 	echo "</table>";
 	echo "</div>";
