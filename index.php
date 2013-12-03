@@ -19,10 +19,12 @@
 	Welcome to PaidSource
 <?php endblock() ?>
 
-<div class="well">
 <!-- Content block -->
 <?php startblock('content') ?>
-	<h2>Welcome to PaidSource!</h2>
+<div class="well">
+	<div class="page-header">
+		<h2>Welcome to PaidSource!</h2>
+	</div>
 <?php
 	if (is_logged_in()) {
 		echo "TODO: show requests";
@@ -44,5 +46,5 @@
 		</form>';
 	}
 ?>
-<?php endblock() ?>
 </div>
+<?php endblock() ?>
