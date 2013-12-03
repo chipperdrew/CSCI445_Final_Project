@@ -25,6 +25,7 @@
 	<div class="page-header">
 		<h2>Welcome to PaidSource!</h2>
 	</div>
+</div>
 <?php
 	if (is_logged_in()) {
 		echo "TODO: show requests";
@@ -46,5 +47,4 @@
 		</form>';
 	}
 ?>
-</div>
 <?php endblock() ?>
