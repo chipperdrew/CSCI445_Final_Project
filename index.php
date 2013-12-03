@@ -27,10 +27,14 @@
 		echo '<div class="well">';
 		echo '<div class="page-header">';
 		echo "<h2>Welcome to PaidSource!";
-		echo "</div>";
+
+		
+		echo '<div class ="well">';
 		echo "TODO: show requests";
 		echo "</div>";
-	} else {
+		echo "</div>";
+		
+		} else {
 		echo '<div class="well">';
 		echo '<div class="page-header">';
 		echo "<h2>Welcome to PaidSource!";
@@ -53,4 +57,21 @@
 		echo "</div>";
 	}
 ?>
+
+
+		<!-- //Brief Overview -->
+		
+		
+		<!-- //How to add a request -->
+
+
+
+		<!-- How to look at your own requests -->
+		
+		
+		<!-- How to browse requests -->
+		
+		<!-- When you are finished click the logout button and get money get paid -->
+
+
 <?php endblock() ?>
