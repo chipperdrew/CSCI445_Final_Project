@@ -101,9 +101,9 @@
 	$requests = $db -> query("SELECT * FROM request");
 	echo "<div id='jankdiv'>";
 	echo "<h2>Current Requests Shown Below:</h2>";
-	echo '<table class="table-striped" border="1">';
+	echo '<table class="table-striped">';
 	echo "<tr>";
-	echo "<th>Title</th>";
+	echo "<th>Title of Request</th>";
 	echo "<th>Posted By:</th>";
 	echo "</tr>";
 	
@@ -116,7 +116,7 @@
 		// Get username based off of id
 		$user = $db -> query("SELECT username FROM user where id=$row[1]");
 		if($username = $user->fetch_row()) {
-			echo "<td>$username[0]</td>";
+			echo "<td><h3>$username[0]</h3></td>";
 		}
 		echo "</tr>";
 	}
