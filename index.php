@@ -29,7 +29,7 @@
 		echo "<h2>Welcome to PaidSource!";
 		echo "</div>";
 		echo "TODO: show requests";
-		echo "</div>":
+		echo "</div>";
 	} else {
 		echo '<div class="well">';
 		echo '<div class="page-header">';
