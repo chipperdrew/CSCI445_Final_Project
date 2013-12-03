@@ -37,6 +37,11 @@
 					for submissions";
 				$request_open = true;
 			}
+		
+			// Check if the user owns the post
+			if($post_data[1]==$_SESSION['user_id']) {
+				echo "<br/><a href='request_edit.php?id=$_GET[id]'>Edit your post</a>";
+			}
 		}
 		if ($request_open) {
 			$id = $_GET['id'];
