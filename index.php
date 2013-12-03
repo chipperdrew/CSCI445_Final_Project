@@ -27,7 +27,7 @@
 		echo '<div class="well">';
 		echo '<div class="page-header">';
 		echo "<h2>Welcome to PaidSource!";
-
+		echo "</div>";
 		echo "</div>";
 		
 		} else {

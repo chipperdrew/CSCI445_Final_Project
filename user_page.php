@@ -62,7 +62,7 @@
 		$title = $title_query->fetch_row();
 		echo "<a href='post_base.php?id=$row[0]'>$title[0]</a><br/>";
 	}
-	echo "</div>"
+	echo "</div>";
 	echo "</div>";
 ?>
 
