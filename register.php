@@ -7,36 +7,40 @@
 
 
 <?php startblock('content') ?>
-	<h3>Fill out the form below to create an account on PaidSource:</h3>
-	<form action="" method="POST">
-		<table>
-			<tr>
-				<td>Enter a username:</td>
-				<td><input type="text" name="username" /></td>
-			</tr>
-			<tr>
-				<td>Enter a password:</td>
-				<td><input type="password" name="password" /></td>
-			</tr>
-			<tr>
-				<td>Verify your password:</td>
-				<td><input type="password" name="password2" /></td>
-			</tr>
-			<tr>
-				<td>Enter your first name:</td>
-				<td><input type="text" name="first" /></td>
-			</tr>
-			<tr>
-				<td>Enter your last name:</td>
-				<td><input type="text" name="last" /></td>
-			</tr>	
-			<tr>
-				<td>Email:</td>
-				<td><input type="email" name="email" /></td>
-			</tr>		
-		</table>
-		<button action="submit" class="btn btn-success">Register</button>
-	</form>
+	<div class="well">
+		<div class="page-header">
+			<h3>Fill out the form below to create an account on PaidSource:</h3>
+		</div>
+		<form action="" method="POST">
+			<table>
+				<tr>
+					<td>Enter a username:</td>
+					<td><input type="text" name="username" /></td>
+				</tr>
+				<tr>
+					<td>Enter a password:</td>
+					<td><input type="password" name="password" /></td>
+				</tr>
+				<tr>
+					<td>Verify your password:</td>
+					<td><input type="password" name="password2" /></td>
+				</tr>
+				<tr>
+					<td>Enter your first name:</td>
+					<td><input type="text" name="first" /></td>
+				</tr>
+				<tr>
+					<td>Enter your last name:</td>
+					<td><input type="text" name="last" /></td>
+				</tr>	
+				<tr>
+					<td>Email:</td>
+					<td><input type="email" name="email" /></td>
+				</tr>		
+			</table>
+			<button action="submit" class="btn btn-success">Register</button>
+		</form>
+	</div>
 <?php endblock() ?>
 
 <?php

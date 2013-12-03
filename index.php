@@ -21,11 +21,20 @@
 
 <!-- Content block -->
 <?php startblock('content') ?>
-	<h2>Welcome to PaidSource!</h2>
+
 <?php
 	if (is_logged_in()) {
+		echo '<div class="well">';
+		echo '<div class="page-header">';
+		echo "<h2>Welcome to PaidSource!";
+		echo "</div>";
 		echo "TODO: show requests";
+		echo "</div>";
 	} else {
+		echo '<div class="well">';
+		echo '<div class="page-header">';
+		echo "<h2>Welcome to PaidSource!";
+		echo "</div>";
 		echo '
 		<p>Login below:</p>
 		<form action="login.php" method="POST">
@@ -41,6 +50,7 @@
 			</table>
 			<button class="btn btn-success" action="submit">Login</button>
 		</form>';
+		echo "</div>":
 	}
 ?>
 <?php endblock() ?>

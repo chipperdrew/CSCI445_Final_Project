@@ -110,7 +110,7 @@
 	$requests = $db -> query("SELECT * FROM request WHERE accepted_submission_id is NULL");
 	echo "<div class='well well-sm' id='jankdiv'>";
 	echo '<table class="table-striped">';
-	echo "<caption><h4>Current Requests</h4></caption>";
+	echo "<caption><h2>Current Requests</h2></caption>";
 	echo "<tr>";
 	echo "<th>Title of Request</th>";
 	echo "<th>Posted By:</th>";
