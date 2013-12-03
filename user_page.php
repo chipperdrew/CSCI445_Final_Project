@@ -50,8 +50,11 @@
 		echo "<a href='post_base.php?id=$row[0]'>$row[1]</a><br/>";
 	}
 	echo "<br/><br/>";
-
+	echo "</div>";
+	
 	// Show all submission by user
+	echo '<div class="well">';
+	
 	echo "<h3>All requests for which $_SESSION[username] has a submission:</h3>";
 	$open_reqs = $db->query("SELECT request_id FROM submission WHERE user_id=$_SESSION[user_id]");
 	while($row = $open_reqs->fetch_row()) {
@@ -59,7 +62,7 @@
 		$title = $title_query->fetch_row();
 		echo "<a href='post_base.php?id=$row[0]'>$title[0]</a><br/>";
 	}
-
+	echo "</div>"
 	echo "</div>";
 ?>
 
