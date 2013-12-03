@@ -7,29 +7,38 @@
 
 <!-- Content block -->
 <?php startblock('content') ?>
-	<h3>Enter your request:</h3>
-	<form action="" method="POST">
-		<table>
-			<tr>
-				<td>Title:</td>
-				<td><textarea rows="1" cols="40" name="title"></textarea></td>
-			</tr>
-			<tr>
-				<td>Description:</td>
-				<td><textarea rows="4" cols="40" name="desc"></textarea></td>
-			</tr>
-			<tr>
-				<td>Minimum Price (to the nearest dollar):</td>
-				<td><textarea rows="1" cols="10" name="min_price"></textarea></td>
-			</tr>
-			<tr>
-				<td>Maximum Price (to the nearest dollar):</td>
-				<td><textarea rows="1" cols="10" name="max_price"></textarea></td>
-			<tr/>
-		</table>
-		<button type="submit" class="btn btn-success">Request</button>
-	</form>
-	
+	<div class="well well-sm">
+		<h3>Enter your request:</h3>
+		<form action="" method="POST" role="form">
+				<table>
+					<div class="form-group">				
+						<tr>
+							<td>Title:</td>
+							<td><textarea rows="1" cols="40" name="title"></textarea></td>
+						</tr>
+					</div>
+					<div class="form-group">				
+					<tr>
+						<td>Description:</td>
+						<td><textarea rows="4" cols="40" name="desc"></textarea></td>
+					</tr>
+					</div>
+					<div class="form-group">				
+					<tr>
+						<td>Minimum Price (to the nearest dollar):</td>
+						<td><textarea rows="1" cols="10" name="min_price"></textarea></td>
+					</tr>
+					</div>
+					<div class="form-group">				
+					<tr>
+						<td>Maximum Price (to the nearest dollar):</td>
+						<td><textarea rows="1" cols="10" name="max_price"></textarea></td>
+					<tr/>
+					</div>
+				</table>
+				<button type="submit" class="btn btn-success">Request</button>
+		</form>
+	</div>
 <?php endblock() ?>
 
 <?php
@@ -98,21 +107,24 @@
 	}
 
 	// Display all requests
-	$requests = $db -> query("SELECT * FROM request");
-	echo "<div id='jankdiv'>";
-	echo "<h2>Current Requests Shown Below:</h2>";
+	$requests = $db -> query("SELECT * FROM request WHERE accepted_submission_id is NULL");
+	echo "<div class='well well-sm' id='jankdiv'>";
 	echo '<table class="table-striped">';
+	echo "<caption><h4>Current Requests</h4></caption>";
+	echo "<tr>";
+	echo "<th>Title of Request</th>";
+	echo "<th>Posted By:</th>";
+	echo "</tr>";
 	while($row = $requests->fetch_row()) {
 		echo "<tr>";
 		echo "<td>";
 		echo "<a href='post_base.php?id=$row[0]'>" // Link based on request id
-			. "<h3>$row[3]</h3></a>"	   // Request Title
-			. "Posted by user: ";		   // User_id
+			. "<h3>$row[3]</h3></a>";
 		echo "</td>";
 		// Get username based off of id
 		$user = $db -> query("SELECT username FROM user where id=$row[1]");
 		if($username = $user->fetch_row()) {
-			echo $username[0];
+			echo "<td><h3>$username[0]</h3></td>";
 		}
 		echo "</tr>";
 	}

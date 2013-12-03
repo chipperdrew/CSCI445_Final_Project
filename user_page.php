@@ -20,10 +20,21 @@
 	// Show all open requests by user
 	echo "<h3>All open requests by $_SESSION[username]:</h3>";
 	$open_reqs = $db->query("SELECT id, title FROM request WHERE accepted_submission_id IS NULL AND owner_id=$_SESSION[user_id]");
+	echo "<ul>";
 	while($row = $open_reqs->fetch_row()) {
-		echo "<a href='post_base.php?id=$row[0]'>$row[1]</a><br/>";
+		echo "<li><a href='post_base.php?id=$row[0]'>$row[1]</a></li>";
+		// Check for submissions on requests
+		$submissions = $db->query("SELECT user.username, submission.file_name FROM request
+			INNER JOIN submission ON submission.request_id = request.id
+			INNER JOIN user ON user.id = submission.user_id
+			WHERE request.id = " . $row[0]);
+		echo "<ul>";
+		while($sub = $submissions->fetch_row()) {
+			echo "<li>$sub[0]'s submission: $sub[1]</li>";
+		}
+		echo "</ul>";
 	}
-	echo "<br/><br/>";
+	echo "</ul><br/>";
 
 	// Show all closed requests by user
 	echo "<h3>All closed requests by $_SESSION[username]:</h3>";
