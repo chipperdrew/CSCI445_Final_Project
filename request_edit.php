@@ -21,6 +21,7 @@
 
 <?php startblock('content') ?>
 	<!-- Edit form -->
+	<div class="well">
 	<h3>Edit your post</h3>
 	<form action="" method="POST">
 		<table>
@@ -43,6 +44,7 @@
 		</table>
 		<button type="submit" class="btn btn-success">Update</button>
 	</form>
+	</div>
 <?php endblock() ?>
 	
 <?php
