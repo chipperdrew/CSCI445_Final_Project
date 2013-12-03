@@ -8,26 +8,28 @@
 <!-- Content block -->
 <?php startblock('content') ?>
 	<h3>Enter your request:</h3>
-	<form action="" method="POST">
-		<table>
-			<tr>
-				<td>Title:</td>
-				<td><textarea rows="1" cols="40" name="title"></textarea></td>
-			</tr>
-			<tr>
-				<td>Description:</td>
-				<td><textarea rows="4" cols="40" name="desc"></textarea></td>
-			</tr>
-			<tr>
-				<td>Minimum Price (to the nearest dollar):</td>
-				<td><textarea rows="1" cols="10" name="min_price"></textarea></td>
-			</tr>
-			<tr>
-				<td>Maximum Price (to the nearest dollar):</td>
-				<td><textarea rows="1" cols="10" name="max_price"></textarea></td>
-			<tr/>
-		</table>
-		<button type="submit" class="btn btn-success">Request</button>
+	<form action="" method="POST" role="form">
+		<div class="form-group">
+			<table>
+				<tr>
+					<td>Title:</td>
+					<td><textarea rows="1" cols="40" name="title"></textarea></td>
+				</tr>
+				<tr>
+					<td>Description:</td>
+					<td><textarea rows="4" cols="40" name="desc"></textarea></td>
+				</tr>
+				<tr>
+					<td>Minimum Price (to the nearest dollar):</td>
+					<td><textarea rows="1" cols="10" name="min_price"></textarea></td>
+				</tr>
+				<tr>
+					<td>Maximum Price (to the nearest dollar):</td>
+					<td><textarea rows="1" cols="10" name="max_price"></textarea></td>
+				<tr/>
+			</table>
+			<button type="submit" class="btn btn-success">Request</button>
+		</div>
 	</form>
 	
 <?php endblock() ?>
